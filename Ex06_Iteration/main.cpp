@@ -18,9 +18,10 @@ int main()
     // 배열 데이터 출력 연습 문제로 제공
     // 힌트: sizeof(my_array)
     int my_array[] = {1, 2, 3, 4, 5, 4, 3, 2, 1};
-    // for (...)
+
+    for(int i=0; i<sizeof(my_array)/sizeof(int); i++)
     {
-        // TODO: 완성
+        cout << my_array[i] << " ";
     }
     cout << endl;
 
@@ -31,9 +32,13 @@ int main()
     // cout << my_string << endl; 사용 X
     // 힌트: sizeof(), '\0', break,
 
-    // for (...)
+    for(int i=0; i<sizeof(my_string); i++)
     {
-        // TODO: 완성
+        if (my_string[i] == '\0')
+        {
+            break;
+        }
+        cout << my_string[i];
     }
     cout << endl;
 
@@ -49,23 +54,28 @@ int main()
     */
 
     // 실습 문제
-    // while (true)
+    while (true)
     {
-        // 이 구조에서 똑같이 정수 출력하도록 만들게 하기 (break)
+        if (i >= 10)
+            break;
+        i++;
+        cout << i << " ";
+
     }
 
     // 런타임오류 주의
     // while문으로 문자열 한글자씩 출력하기
     // 힌트 && logical and
 
-    /*
+    
     int i = 0;
-    while (...)
+    while (my_string[i]!= '\0' && i<sizeof(my_string))
     {
-        // TODO:
+        i++;
+        cout << my_string[i] << " ";
     }
     cout << endl;
-    */
+    
 
     return 0;
 }
